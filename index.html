@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="احسب نظام الطاقة الشمسية لبيتك بدقيقة. كشف مجاني وضمان 3 سنين. Run to Sun">
+<meta property="og:title" content="Run to Sun | حاسبة الطاقة الشمسية">
+<meta property="og:description" content="احسب نظام الطاقة الشمسية لبيتك بدقيقة، والكشف مجاني.">
+<title>Run to Sun | حاسبة الطاقة الشمسية وصيانة الإنفرترات والبطاريات</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eaf6f7;--card:#fff;--ink:#12212b;--mut:#5b6b76;--line:#d5dde2;--sun:#f2a900;--on-sun:#12212b;--night:#0a4f8c;--ok:#0a5c9e;--warn:#b42318;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a21;--card:#17252f;--ink:#e8eef2;--mut:#9fb0bb;--line:#2b3d49;--night:#5f87a8;--ok:#4fb3d9;--warn:#ff8b7d}}
+:root[data-theme="dark"]{--bg:#101a21;--card:#17252f;--ink:#e8eef2;--mut:#9fb0bb;--line:#2b3d49;--night:#5f87a8;--ok:#4fb3d9;--warn:#ff8b7d}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Tajawal,Tahoma,Arial,sans-serif}
+main{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:28px;line-height:1.35;margin:8px 0;font-weight:800}h2{font-size:20px;margin:0 0 8px;font-weight:800}
+p{margin:6px 0}.mut{color:var(--mut);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+nav{display:flex;gap:6px;margin:14px 0}nav button{flex:1;padding:10px 4px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;font:500 15px Tajawal,Tahoma,sans-serif;cursor:pointer}
+nav button[aria-selected=true]{background:var(--sun);color:var(--on-sun);border-color:var(--sun);font-weight:800}
+.row{display:grid;grid-template-columns:1fr 62px 44px 44px 44px;gap:5px;align-items:center;margin:5px 0;font-size:14px}
+.row.h{color:var(--mut);font-size:12px}
+input,select,textarea{width:100%;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+.row input{padding:6px 2px;text-align:center}
+label{display:block;margin:10px 0 4px;font-weight:500}
+.btn{display:block;width:100%;text-align:center;padding:13px;border-radius:8px;background:var(--sun);color:var(--on-sun);font:800 17px Tajawal,Tahoma,sans-serif;border:0;text-decoration:none;cursor:pointer;margin-top:12px}
+.btn.alt{background:var(--ok);color:#fff}
+:focus-visible{outline:3px solid var(--ok);outline-offset:2px}
+.day{display:flex;height:34px;border-radius:6px;overflow:hidden;font-size:12px;font-weight:500;margin:8px 0 2px}
+.day div{display:flex;align-items:center;justify-content:center}
+.s{background:var(--sun);color:var(--on-sun)}.n{background:var(--night);color:#fff}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:8px}.res div{border:1px solid var(--line);border-radius:8px;padding:8px}
+.res b{display:block;font-size:20px;font-weight:800}.res span{font-size:13px;color:var(--mut)}
+.warn{color:var(--warn)}ul{padding-inline-start:20px;margin:6px 0}
+details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;font-weight:500}
+.r2{display:grid;grid-template-columns:1fr 1.4fr 50px;gap:5px;align-items:center;margin:6px 0;font-size:14px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+<div dir="ltr" style="display:flex;align-items:center;gap:10px"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCABwAHADASIAAhEBAxEB/8QAHAAAAgMAAwEAAAAAAAAAAAAABAcDBQYAAQII/8QAShAAAQMCAgQGCw0GBwAAAAAAAQACAwQFETEGEiFBByJRcZHRCBM0UmFzgZOUstIUIyQlMkJDRFRVscHhFTVTg6HTNkVjgoSSwv/EABoBAAIDAQEAAAAAAAAAAAAAAAQFAgMGAQD/xAAmEQACAQMDAwUBAQAAAAAAAAABAgADBBESITEFMlEiM0FhsXFS/9oADAMBAAIRAxEAPwBzryWr0VFVVMNFTS1NTK2GCFhkkkcdjWgYklHjPxM1JGjcqmt0x0etshiqr3QRyDYWdtDiOcDFJPTXhLuOlNTJTUkktHagcGwsOq+Yd9IRy97kPCstBsy2cyaUulkjNQ4gr3WNlE+jmcIOi26+0fS7qUo4QNGiNl7pD5XdS+eYScM0bESpnplPyZQeoOPiPV2m2j0h2XilPlPUu26XWJ+wXWl6T1JKxE7EZCclE9OQfJlLdTqeBHXT3Whq+562mmPIyQE9CJJOO1JiIZK8tt9uFvwEVS9zB9HIdZvQcvIqXsMdpnV6tv61jJ2ZLvEKjtekkFxLY5R2iY7ACeK7mP5K21ignplDgxlSrLUGpDmS6/hXRlJGAOxRErou5FDEnqMPKXHDnd5KHRanoInFv7QqNR5G9jBrEeU6qZBSo4fYZZqCyCKKSTCebHUaXYcVvIirMA1lzI1M6TiJ2LcjYs1BFR1X2Wo807qRkVJU/ZqjzTupaTIixgZNDkjokNDSVOHc1R5p3UjYqWox7nn2/wCm7qVbEQZwYRFuRkK9TWO50FBTXCqoKiCkqiRDNI3Br8OT9V5h3KrUG3EHqKV2YQ6JGRoOJFxbVW3MGeGwrWWK7OnDaWodi8DiPObvAfCsnCjqdxY4OacHDaDyIatTDrvJW1yaFQMOPmbdy6UVHU+7KVk2G0jb4DvUqUTVA5GRLFKrh6qqimobIYKiaHWnmx7XI5uPFbngU1SEreHaengobL2+jbVa002GtK5mrxW97mibP3lnX7TFFFdLgcPjCt9If1ouK5V5+v1npD+tRRVtv2fE8fpUvWio62g3Whg/5UvWtCcf5/Iub+yeG5V326r8+/rRsVwrT9dq/Pv60PFWUOH7pj9Jl60ZFV0X3VH6TL1qDfz8gzf39ljUaQ3a5W6lttZXzz0lKSYYpDiGnnzOZzJUUO5dRVdHs+LI/SJOtX9RebNUaM01up7GymuMcxe+sD9bXbt2Ynad2w7BgqD6cBVlTjXks24Hznf6lfEi40JEi4sl08wF4bCjYfyQUKNg/JUmDtNFo5ITDPEfmvxHlCtSqbRv5dXzs/BXTs0nqdxmutiTRQnwJYnNKzh3pY6mhsofWU1NhNNh27W43FblqtKabkpeyC7gsfj5vVarrL3ll9TtMV0VtgGHxvbumX+2i4rdAP8ANrd0y/21TRbkZFmtGVPn8i1iPEuIrfD9628+WX2EbFQQ/edB0yewqWHJHRKoqfMGcjxLeKgh+86Hpk9hGQ0MX3jRdMnsKoi3IyFVlT5g7MPE1Fw0eprdY7dcorxS1ctWSH08WcWH9fAcQM0BGg4Rv5UZGqQpAwxzKK7KxyoxDYUbDuQUKLaXAAMGL3HVaOUlQYgDJg4QuwReTNFo0z3iol3PkwHkGCuTkh7fSChooqcZtG08p3ohJmOTmbBF0KFHxLF2SUnZBdwWPx83qNTcSj7IPuCxePm9VqJsffWdq9hifi3I2LNBRbkbFmtKYsaFw5I6JQU9FVPYHNpp3NO0ERnAo2KiqhnTTj/YUOzr5lDI3iTRbkZDuQjGOjdqva5rhucMCi4VHOYK4xDokZGg4tyvLPY6m7YugLAxpwc4n5PkQ9WoqDLSCUWqtoTmRRnAc+QG9amwWZ8ThWVTcH4e9sPzRynwou1aOUtuIkf79MPnOyHMFauG1Kq9wamw4ju0sVoeo7tPK4uLiHhsskpOyE7hsXj5vVam2lJ2QY+A2Px83qtRVj76zlXsMT0W5GRb+ZBxbkZFv5lpTFhn0RoTTQv0YoHOijcTE3EluJyCuvclP/Aj/wCoVVoP/hW3eKb+AV2c1kX5MbjiZrS7RGC90glpo2RVsI97IGAeO9P5HclgInwSuilY5j2HVc1wwIPIU8zkslpjoqLk03Cjj+FsHHaPpQP/AEP6o20udB0NxF17a6xrXmYWJW1ouU1rqmzwnHc5hyeOQqpi2IyNMXAYYMRaih1LyIzqGuhuFO2eF2LXbt4PIVO7JYOy3OS2T67cXRu2PZyjrW5p546qBssTtZjhiCk1aiaZ+poLS6Wuv3OLi7OwrpUwuWvaJf4buhKPsho3soLFrNIxnn9RqdczpGgGOMSHHaC/V/IrC8Jugdbp9SUEUb2UjqOR7xxw7X1gByDDDBX2lQJVVm4kqiEqQJ81xbkZFv5kym8AF2Ye74j0KVvAVdmfXYekJ4b+h/qAG2qeIw9BaeR2iluIAwMTd/gCvDSync3pQejlBW2Wy0tvmp43vgYGFwmG3DyKy7bU/ZW+fHsrOtuTGGNpAaWUbm9K8mkl5B0qcyVW34Kzz49lddtqvszPPD2VzE9MNphojJGX3SjjGHyp42+sB+PSslFtTkfJUuGHuVnnh7Kxl10Iqpax01BDDFG84mIyjBp8GzJH29zgaXie9sC7aqUzcKu7Lc30Emq4l0LvlN5PCFxmht5Z9HTH+d+ilboveWfQUx/n/opvWpOMEwJLK6puHQbj7mpax0rBIzjNcMQQc1wxP70oGw0t1oXGGrhhFORiC2bWLTzYK53pcwAO0fozFQWGDP/Z" alt="Run to Sun" width="48" height="48" style="border-radius:10px"><b style="font-size:20px;font-weight:800">Run to Sun</b></div>
+<h1>احسب نظام الطاقة الشمسية بدقيقة، وإحنا منكمّل بالكشف المجاني</h1>
+<p class="mut">تقدير أولي بالكيلوواط بدون أسعار. التصميم الفعلي بيتحدد بالكشف على الأرض.</p>
+<p><b>ضمان 3 سنين على الإنفرتر، وصيانة كل 3 سنين بترجّع الضمان.</b> <a href="#" onclick="document.querySelector('[data-t=why]').click();return false">شو يعني هيك؟</a></p>
+<nav role="tablist">
+<button role="tab" aria-selected="true" data-t="home">بيت</button>
+<button role="tab" aria-selected="false" data-t="calc">معمل / مؤسسة</button>
+<button role="tab" aria-selected="false" data-t="fix">صيانة</button>
+<button role="tab" aria-selected="false" data-t="why">معاييرنا وأسئلة</button>
+</nav>
+
+<section id="home">
+<div class="card">
+<h2>بيتك: شو عندك؟</h2>
+<label>أي حجم نظام بدك؟</label>
+<select id="tier"><option value="5">5 أمبير</option><option value="10" selected>10 أمبير</option><option value="15">15 أمبير</option><option value="20">20 أمبير</option></select>
+<p class="mut">الأمبير هو أقصى ما بتشغّله مع بعض بنفس اللحظة. منقلك كيف تدير أجهزتك ضمنه.</p>
+<p class="mut">ابدأ من نموذج جاهز وعدّل عليه:</p>
+<div style="display:flex;gap:6px;margin:6px 0"><button class="btn" data-p="s" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت صغير</button><button class="btn" data-p="m" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت متوسط</button><button class="btn" data-p="l" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت كبير</button></div>
+<div id="hq"></div>
+<button class="btn" id="hgo">احسب</button>
+</div>
+<div class="card" id="hout" hidden>
+<h2>التصور الأولي لبيتك</h2>
+<div class="res" id="hres"></div>
+<h2 style="margin-top:14px">كيف تشغّل أجهزتك</h2>
+<ul id="hplan"></ul>
+<p class="mut">هالحساب تقريبي ومبدئي. الأمبيرات المكتوبة هي متوسط، وجهازك الفعلي ممكن يسحب أكتر (خصوصاً الموتورات). منتأكد بالكشف المجاني، وما منسعّر قبله.</p>
+<a class="btn alt" id="hwa" target="_blank" rel="noopener">احجز كشف مجاني عبر واتساب</a>
+</div>
+</section>
+
+<section id="calc" hidden>
+<div class="card">
+<h2>معمل، مصنع، مؤسسة أو تعاونية: شو عندك؟</h2>
+<div class="row h"><span>الجهاز</span><span>واط</span><span>عدد</span><span>ساعات نهار</span><span>ساعات ليل</span></div>
+<div id="rows"></div>
+<label>نوع النظام</label>
+<select id="ph"><option value="3">3 فاز (معمل، مؤسسة، تعاونية)</option><option value="1">فاز واحد (محل صغير)</option></select>
+<label>متى بتستهلك أكتر شي؟</label>
+<select id="use"><option value="e">من الصبح الباكر (مثلاً من 6)</option><option value="s" selected>على مدار النهار</option><option value="w">بعد الظهر (مكيفات صيفاً، محل بيفتح ظهراً)</option></select>
+<button class="btn" id="go">احسب</button>
+</div>
+
+<div class="card" id="out" hidden>
+<h2>التصور الأولي</h2>
+<div class="res" id="res"></div>
+<div class="day" aria-hidden="true"><div class="n" style="flex:7">بطارية</div><div class="s" style="flex:9">شمس (شتا)</div><div class="n" style="flex:8">بطارية</div></div>
+<p class="mut">بالشتا الشمس عنا من حوالي 7 لـ 4، والبطارية بتشيل البيت من 4 العصر لـ 7 الصبح.</p>
+<p id="tip"></p>
+<p id="wn" class="warn"></p>
+<p class="mut">هالحساب تقريبي ومبدئي. ممكن بالكشف نلاقي تفاصيل تانية: جهاز بيسحب أكتر من المكتوب عليه، قطعة تعبانة بالجهاز، ظل، أو شكل السطح. ما منسعّر قبل الكشف، والكشف مجاني.</p>
+<a class="btn alt" id="wa" target="_blank" rel="noopener">احجز كشف مجاني عبر واتساب</a>
+</div>
+</section>
+
+<section id="fix" hidden>
+<div class="card">
+<h2>عندك إنفرتر أو بطارية ليثيوم بعطل؟</h2>
+<p>منصلّح الأعطال المعقدة بالإنفرترات بكل أنواعها، ومنصلّح بطاريات الليثيوم بكل أحجامها. ابعتلنا التفاصيل ومنرد عليك على واتساب.</p>
+<label>شو الجهاز؟</label><select id="ft"><option>إنفرتر</option><option>بطارية ليثيوم</option></select>
+<label>الماركة والموديل</label><input id="fm">
+<label>رمز العطل أو شو عم يصير؟</label><textarea id="fd" rows="3"></textarea>
+<a class="btn alt" id="fw" target="_blank" rel="noopener">ابعت العطل عبر واتساب</a>
+<p class="mut">بعد ما تبعت، ابعت صورة أو فيديو للجهاز ولشاشته على الواتساب.</p>
+</div>
+<div class="card">
+<h2>أولاً السلامة</h2>
+<p>إذا البطارية منفوخة، أو سخنة بزيادة، أو طالعة منها ريحة أو دخان: افصلها إذا فيك بأمان، ابعد عنها، واتصل فينا. لا تشحنها ولا تفتحها.</p>
+</div>
+</section>
+
+<section id="why" hidden>
+<div class="card"><h2>ضمان 3 سنين، وصيانة كل 3 سنين</h2><ul>
+<li>ضمان الشركة المصنّعة غالباً سنة. إحنا منكفل الإنفرتر 3 سنين، لأنا واثقين بالجهاز وبطريقة تركيبنا وبتصميم الشبكة الكهربائية.</li>
+<li>كهرباء الدولة بتفوت على البيت مباشرة، والإنفرتر بيضل احتياط. وقت تروح، تايمر ونظام تحويل بيقلبوا البيت على الشمسية بهدوء، بدل ما تضرب الكهرباء على الإنفرتر دغري وتفقع الباور سبلاي أو قطعة بقلبه.</li>
+<li>كل 3 سنين، حتى لو ما في عطل، منفك الإنفرتر ومنعمل له نفضة وصيانة كاملة. مع الوقت بتتعب قطع جوّا الإنفرتر وبتقل كفاءته، متل ما بتقل سعة البطارية وكفاءة الألواح مع العمر. الجهاز بيضل شغال، بس بإنتاج أقل. الصيانة اختيارية وبننصح فيها، بتدفع كلفتها، وبيرجع الضمان 3 سنين.</li>
+<li>هيك ما بتضطر تشتري إنفرتر جديد بعد 3 أو 4 سنين.</li>
+</ul></div>
+<div class="card"><h2>ليش مختلفين</h2><ul>
+<li>منركّب بس بطاريات ليثيوم من النوع الآمن والثابت حرارياً.</li>
+<li>ما منركّب بطارية رخيصة ما فيها بلانسر لخلاياها. الخلايا بتتفاوت بالشحن وبتخرب بسرعة، ومنكون عم نخسّرك.</li>
+<li>مش أي إنفرتر بالسوق. منختبر كل موديل قبل ما نعتمده: قطع الجهاز الداخلية والبوردات، وطريقة التصنيع. منختار الأفضل ولو كان أغلى.</li>
+<li>استشارة مجانية حتى لو الجهاز مش من عنا.</li>
+<li>بنحسب الحديد (الستراكتشر) وزاوية الألواح واتجاهها حسب شغلك.</li>
+</ul></div>
+<div class="card"><h2>أسئلة بيسألها الزبون</h2>
+<details><summary>وين بتنحط البطاريات؟</summary><p>الأفضل مكان مهوّى ونظيف وبعيد عن الحرارة والرطوبة. منختار أنواع آمنة، وأي نوع أقل أماناً بتنحط برا البيت.</p></details>
+<details><summary>ليش في بطاريات أرخص بكتير؟</summary><p>غالباً بتوفير بنوع الخلايا، أو بغياب البلانسر، أو بنظام الحماية. هالأشياء ما بتبين يوم التركيب، بتبين بعد شهور.</p></details>
+<details><summary>الألواح لوين بدها تكون؟</summary><p>مين بيشتغل من 6 الصبح، متل معمل حجارة أو كشك قهوة، منميّلها شرق أكتر. محل بيفتح ظهراً ومكيفاته بالصيف بعد الظهر، منميّلها غرب شوي. بالباقي جنوب. الميلان عنا ثابت 33 درجة، والاتجاه بنحدده بالكشف.</p></details>
+<details><summary>ليش بيطلع عندي تيار أكبر من المكتوب؟</summary><p>الموتورات (مي، براد، مكيف) بتسحب أضعاف وقت الإقلاع، وإذا في قطعة تعبانة بالجهاز بتسحب أكتر من المكتوب. هيدا بنكتشفه بالكشف.</p></details>
+<details><summary>وين الأسعار؟</summary><p>ما منسعّر قبل الكشف لأنه كل موقع مختلف. الكشف مجاني، وبعدو منعطيك الكلفة.</p></details>
+</div>
+</section>
+<p class="mut" style="text-align:center;margin-top:20px">© Run to Sun. جميع الحقوق محفوظة.</p>
+</main>
+<script>
+const WA="96178920901",$=id=>document.getElementById(id);
+// جداول قابلة للتعديل
+const INV1=[2000,3000,3500,5500,6000,8000,10000,12000], INV3=[18000,50000];
+const MAXPV={2000:2000,3000:3000,3500:3500,5500:5500,6000:9000,8000:16000,10000:10000,12000:12000,18000:18000,50000:50000};
+const BAT=[5,10,12,15,16,17.5,20,25,32,35], SUN=3.5, NIGHT_H=15;
+const APP=[["براد",150,3,12,12],["مجمّدة",200,3,12,12],["مكيف 1 طن",1100,3,6,4],["غسالة",500,2,1,0],["موتور مي 1 حصان",750,3,1,0],["إنارة وتلفزيون وراوتر",300,1,5,6],["جهاز آخر",1000,1,2,2]];
+$("rows").innerHTML=APP.map((a,i)=>`<div class="row"><span>${a[0]}</span><input type="number" min="0" id="w${i}" value="${a[1]}" aria-label="واط"><input type="number" min="0" id="q${i}" value="0" aria-label="عدد"><input type="number" min="0" max="9" id="d${i}" value="${a[3]}" aria-label="ساعات نهار"><input type="number" min="0" max="15" id="n${i}" value="${a[4]}" aria-label="ساعات ليل"></div>`).join("");
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button").forEach(x=>x.setAttribute("aria-selected",x===b));["home","calc","fix","why"].forEach(t=>$(t).hidden=t!==b.dataset.t)});
+const link=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+$("go").onclick=()=>{
+ let sum=0,ex=0,day=0,ngt=0,list=[];
+ APP.forEach((a,i)=>{const w=+$("w"+i).value||0,q=+$("q"+i).value||0,d=+$("d"+i).value||0,n=+$("n"+i).value||0;if(!q)return;
+  sum+=w*q;ex=Math.max(ex,w*(a[2]-1));day+=w*q*d/1000;ngt+=w*q*n/1000;list.push(a[0]+" ×"+q+" ("+w+"W)")});
+ if(!sum){alert("اكتب عدد الأجهزة اللي عندك أولاً");return}
+ const need=(sum*.75+ex)*1.25,ph=$("ph").value;let unit,units=1;
+ if(ph=="3"){const a=Math.ceil(need/18000),b=Math.ceil(need/50000);if(a*18000<=b*50000&&a<=2||need<=18000){unit=18000;units=a}else{unit=50000;units=b}}
+ else{unit=INV1.find(x=>x>=need);if(!unit){unit=12000;units=Math.ceil(need/12000)}}
+ const volt=unit<5000?24:48,invKW=unit*units/1000;
+ let bat=ngt/.9,bt="";if(bat>0){const s=BAT.find(x=>x>=bat);bt=s?s+" kWh":(Math.ceil(bat/35)+" × 35 kWh");bat=s||Math.ceil(bat/35)*35}
+ const pvNeed=(day+bat)/(SUN*.75),cap=MAXPV[unit]*units/1000,pv=Math.max(invKW,pvNeed);
+ const f=x=>x.toFixed(1).replace(".0","");
+ $("res").innerHTML=`<div><span>الإنفرتر</span><b>${units>1?units+" × ":""}${f(unit/1000)} kW</b><span>نظام ${volt} فولت${ph=="3"?"، 3 فاز":""}</span></div><div><span>الألواح</span><b>≈ ${f(Math.min(pv,cap))} kW</b><span>حتى ${f(cap)} kW بهالإنفرتر</span></div><div><span>البطارية (ليثيوم)</span><b>${bt||"بدون"}</b><span>لحمل الليل</span></div><div><span>استهلاك تقريبي</span><b>${f(day)} + ${f(ngt)} kWh</b><span>نهار + ليل</span></div>`;
+ const u=$("use").value;$("tip").textContent={e:"بما إنك بتشتغل من الصبح الباكر، منميّل الألواح شرق أكتر لنستفيد من أول النهار.",s:"استهلاكك موزّع على النهار، فالتوجه جنوب هو الأنسب غالباً.",w:"بما إنك بتستهلك أكتر بعد الظهر، منميّل الألواح غرب شوي لتغطي حمل المكيفات."}[u]+" منركّب الألواح بميلان ثابت 33 درجة، واتجاهها وتثبيتها بنحسبن بالكشف.";
+ $("wn").textContent=pvNeed>cap?"الحمل كبير على هالنظام، فمنحتاج ندرس تقسيم الإنفرترات والألواح بالكشف.":"";
+ $("out").hidden=false;$("out").scrollIntoView({behavior:"smooth"});
+ $("wa").href=link("مرحبا، بدي كشف مجاني.\nنوع النظام: "+(ph=="3"?"3 فاز":"فاز واحد")+"\nالأجهزة: "+list.join("، ")+"\nالتصور الأولي: إنفرتر "+(units>1?units+"×":"")+f(unit/1000)+" kW، ألواح ≈ "+f(Math.min(pv,cap))+" kW، بطارية "+(bt||"بدون"))};
+// أجهزة البيت: [الاسم، النوع (a أساسي، l خفيف، h ثقيل)، ساعات الليل، [[الخيار، أمبير]]]
+const HQ=[["براد","a",15,[["إنفرتر",1],["عادي",2]]],["مجمّدة","a",15,[["إنفرتر",1],["عادية",2]]],["إنارة وراوتر","a",8,[["عادي",1]]],["تلفزيون","l",5,[["تلفزيون",.6]]],["مكيف","h",4,[["إنفرتر",4],["عادي",6]]],["غسالة","h",0,[["إنفرتر",3],["عادية",4]]],["مي سخنة","h",2,[["سخان شمسي على السطح",0],["قنينة كهرباء",9]]],["طرمبة مي","h",1,[["طرمبة",4]]],["خلاط","h",0,[["خلاط",3]]],["هوفر","h",0,[["هوفر",4.5]]],["جلاية","h",1,[["جلاية",9]]],["نشافة","h",0,[["نشافة",11]]],["فرن","h",.5,[["غاز",0],["كهرباء",11]]],["مايكرويف","h",0,[["مايكرويف",5.5]]],["مكوى","h",0,[["مكوى",4]]]];
+const INVH={5:2000,10:3000,15:3500,20:5500};
+$("hq").innerHTML=HQ.map((h,i)=>`<div class="r2"><span>${h[0]}</span><select id="hs${i}"><option value="-1">ما عندي</option>${h[3].map((o,j)=>`<option value="${j}">عندي ${o[0]}</option>`).join("")}</select><input type="number" min="1" max="9" value="1" id="hn${i}" aria-label="عدد"></div>`).join("");
+const PRE={s:[5,{0:0,2:0,3:0}],m:[10,{0:0,1:0,2:0,3:0,5:0,7:0}],l:[15,{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0}]};
+document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{const P=PRE[b.dataset.p];$("tier").value=P[0];HQ.forEach((h,i)=>{$("hs"+i).value=(i in P[1])?P[1][i]:-1;$("hn"+i).value=1})});
+$("hgo").onclick=()=>{
+ const T=+$("tier").value,f=x=>x.toFixed(1).replace(".0","");let base=0,hv=[],ngt=0,day=0,list=[];
+ HQ.forEach((h,i)=>{const j=+$("hs"+i).value;if(j<0)return;const o=h[3][j],q=+$("hn"+i).value||1,a=o[1]*q;list.push(h[0]+": "+o[0]+(q>1?" ×"+q:""));ngt+=a*.22*h[2];
+  if(h[1]=="h"){if(a>0)hv.push([h[0]+" ("+o[0]+")",a]);day+=a*.22*1.5}else{base+=a;day+=a*.22*9}});
+ if(!list.length){alert("اختار الأجهزة اللي عندك أولاً");return}
+ hv.sort((x,y)=>y[1]-x[1]);
+ const unit=INVH[T],volt=unit<5000?24:48;let bat=ngt/.9,bt="بدون";if(bat>0){const s=BAT.find(x=>x>=bat);bt=s?s+" kWh":Math.ceil(bat/35)+" × 35 kWh"}
+ const need=Math.max(unit/1000,(day+(parseFloat(bt)||0))/(SUN*.75)),cap=MAXPV[unit]/1000,pv=Math.min(need,cap);
+ $("hres").innerHTML=`<div><span>النظام</span><b>${T} أمبير</b><span>إنفرتر ~${f(unit/1000)} kW، ${volt} فولت</span></div><div><span>الألواح</span><b>≈ ${f(pv)} kW</b><span>تقريباً</span></div><div><span>البطارية (ليثيوم)</span><b>${bt}</b><span>لحمل الليل</span></div><div><span>الأساسيات</span><b>${f(base)} أمبير</b><span>شغالة طول الوقت</span></div>`;
+ let p=[];if(need>cap+.05)p.push('<li class="warn">بأيام الشتا الغايمة ممكن البطارية ما تتعبّى كلياً بهالحجم. بالكشف منحدد إذا بتحتاج إنفرتر أو ألواح أكبر.</li>');
+ p.push(base>T?`<li class="warn">الأساسيات (براد، إنارة، تلفزيون…) لحالها ${f(base)} أمبير، وهيدا أكبر من ${T}. اختار نظام أكبر.</li>`:`<li>الأساسيات (براد، إنارة، تلفزيون…) بتضل شغالة وبتسحب حوالي ${f(base)} أمبير.</li>`);
+ hv.forEach(([n,a])=>p.push(a<=T-base?`<li>✓ ${n}: بيشتغل مع الأساسيات (${f(a)} أمبير).</li>`:a<=T?`<li>⚠ ${n} (${f(a)} أمبير): شغّله لحاله، وطفّي البراد والأجهزة التانية وقت تشغيله.</li>`:`<li class="warn">✗ ${n} (${f(a)} أمبير): أكبر من نظام ${T} أمبير. بيحتاج نظام أكبر.</li>`));
+ if(hv.length){p.push(`<li>ما تشغّل جهازين تقيلين مع بعض.</li>`);const mt=Math.ceil(base+hv[0][1]);p.push(`<li>لتشغّل أي جهاز مع الأساسيات براحتك، بتحتاج حوالي ${mt} أمبير.</li>`)}
+ $("hplan").innerHTML=p.join("");$("hout").hidden=false;$("hout").scrollIntoView({behavior:"smooth"});
+ $("hwa").href=link("مرحبا، بدي كشف مجاني.\nبيت، نظام "+T+" أمبير\nالأجهزة: "+list.join("، ")+"\nالتصور الأولي: إنفرتر ~"+f(unit/1000)+" kW، ألواح ≈ "+f(pv)+" kW، بطارية "+bt)};
+const fl=()=>$("fw").href=link("عندي عطل.\nالجهاز: "+$("ft").value+"\nالموديل: "+$("fm").value+"\nالعطل: "+$("fd").value);
+["ft","fm","fd"].forEach(i=>$(i).oninput=fl);fl();
+</script>
+</body>
+</html>
