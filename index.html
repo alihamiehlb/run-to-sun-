@@ -36,28 +36,32 @@ label{display:block;margin:10px 0 4px;font-weight:500}
 .warn{color:var(--warn)}ul{padding-inline-start:20px;margin:6px 0}
 details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;font-weight:500}
 .r2{display:grid;grid-template-columns:1fr 1.4fr 50px;gap:5px;align-items:center;margin:6px 0;font-size:14px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:10px}.days{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}.days button{flex:0 0 74px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:6px 2px;font:500 13px Tajawal,Tahoma,sans-serif;cursor:pointer}.days button[aria-pressed=true]{background:var(--sun);border-color:var(--sun);color:#12212b;font-weight:800}.days b{display:block;font-size:20px}.w{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.w div{border:1px solid var(--line);border-radius:8px;padding:8px}.w b{display:block;font-size:22px;font-weight:800}.w span{font-size:13px;color:var(--mut)}.ch{display:flex;align-items:flex-end;gap:2px;height:120px;margin-top:10px;direction:ltr}.ch div{flex:1;border-radius:3px 3px 0 0;min-height:2px}.ax{display:flex;justify-content:space-between;direction:ltr;font-size:11px;color:var(--mut)}summary{cursor:pointer;font-weight:800;font-size:18px}input[type=range]{padding:0}.pm nav,.pm h1:not(#pg),.pm main>p:not(.ft),.pm section:not(#plan){display:none!important}
 [hidden]{display:none!important}
 </style>
 </head>
 <body>
 <main>
 <div dir="ltr" style="display:flex;align-items:center;gap:10px"><img src="data:image/jpeg;base64,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" alt="Run to Sun" width="48" height="48" style="border-radius:10px"><b style="font-size:20px;font-weight:800">Run to Sun</b></div>
+<p style="margin:6px 0"><a href="tel:+96178920901" dir="ltr" style="color:var(--ok);font-weight:800;text-decoration:none">📞 +961 78 920 901</a> <span class="mut">اتصل أو احفظ الرقم</span></p>
 <h1>احسب نظام الطاقة الشمسية بدقيقة، وإحنا منكمّل بالكشف المجاني</h1>
 <p class="mut">تقدير أولي بالكيلوواط بدون أسعار. التصميم الفعلي بيتحدد بالكشف على الأرض.</p>
 <p><b>ضمان 3 سنين على الإنفرتر، وصيانة كل 3 سنين بترجّع الضمان.</b> <a href="#" onclick="document.querySelector('[data-t=why]').click();return false">شو يعني هيك؟</a></p>
 <nav role="tablist">
 <button role="tab" aria-selected="true" data-t="home">بيت</button>
 <button role="tab" aria-selected="false" data-t="calc">معمل / مؤسسة</button>
-<button role="tab" aria-selected="false" data-t="fix">صيانة</button>
+<button role="tab" aria-selected="false" data-t="plan">نظامي</button>
+<button role="tab" aria-selected="false" data-t="fix">صيانة وإصلاح</button>
 <button role="tab" aria-selected="false" data-t="why">معاييرنا وأسئلة</button>
+<button role="tab" aria-selected="false" data-t="adm" id="admb" hidden>روابط</button>
 </nav>
 
 <section id="home">
 <div class="card">
 <h2>بيتك: شو عندك؟</h2>
-<label for="tier">حجم النظام (بالأمبير):</label>
+<label for="tier">كم أمبير بدك نظامك؟ (اكتب الرقم: 5، 10، 40...)</label>
 <div style="display:flex;align-items:center;gap:8px">
-<input type="number" id="tier" min="2" max="60" value="10" step="1" style="font-size:16px;font-weight:700">
+<input id="tier" type="number" min="1" max="200" value="10" inputmode="numeric" style="font-size:16px;font-weight:700">
 <span style="font-weight:700;white-space:nowrap">أمبير (A)</span>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:5px;margin:8px 0">
@@ -70,7 +74,8 @@ details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;fo
 <button type="button" class="btn-tier" data-v="40" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">40A</button>
 <button type="button" class="btn-tier" data-v="50" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">50A</button>
 </div>
-<p class="mut">فيك تكتب أي أمبير بدك ياه (من 2 لـ 60 أمبير) أو تختار كبسة سريعة. الأمبير هو أقصى ما بتشغّله مع بعض بنفس اللحظة.</p>
+<p class="mut">الأمبير هو أقصى ما بتشغّله مع بعض بنفس اللحظة. منقلك كيف تدير أجهزتك ضمنه.</p>
+<label for="hty">نوع البطارية</label><select id="hty"><option value="l">ليثيوم (الأفضل)</option><option value="g">جل</option><option value="a">أسيد</option></select>
 <p class="mut">ابدأ من نموذج جاهز وعدّل عليه:</p>
 <div style="display:flex;gap:6px;margin:6px 0"><button class="btn" data-p="s" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت صغير</button><button class="btn" data-p="m" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت متوسط</button><button class="btn" data-p="l" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت كبير</button></div>
 <div id="hq"></div>
@@ -83,6 +88,7 @@ details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;fo
 <ul id="hplan"></ul>
 <p class="mut">هالحساب تقريبي ومبدئي. الأمبيرات المكتوبة هي متوسط، وجهازك الفعلي ممكن يسحب أكتر (خصوصاً الموتورات). منتأكد بالكشف المجاني، وما منسعّر قبله.</p>
 <a class="btn alt" id="hwa" target="_blank" rel="noopener">احجز كشف مجاني عبر واتساب</a>
+<p class="mut" style="text-align:center">أو اتصل: <a href="tel:+96178920901" dir="ltr">+961 78 920 901</a></p>
 </div>
 </section>
 
@@ -95,6 +101,7 @@ details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;fo
 <select id="ph"><option value="3">3 فاز (معمل، مؤسسة، تعاونية)</option><option value="1">فاز واحد (محل صغير)</option></select>
 <label>متى بتستهلك أكتر شي؟</label>
 <select id="use"><option value="e">من الصبح الباكر (مثلاً من 6)</option><option value="s" selected>على مدار النهار</option><option value="w">بعد الظهر (مكيفات صيفاً، محل بيفتح ظهراً)</option></select>
+<label for="cty">نوع البطارية</label><select id="cty"><option value="l">ليثيوم (الأفضل)</option><option value="g">جل</option><option value="a">أسيد</option></select>
 <button class="btn" id="go">احسب</button>
 </div>
 
@@ -107,9 +114,51 @@ details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;fo
 <p id="wn" class="warn"></p>
 <p class="mut">هالحساب تقريبي ومبدئي. ممكن بالكشف نلاقي تفاصيل تانية: جهاز بيسحب أكتر من المكتوب عليه، قطعة تعبانة بالجهاز، ظل، أو شكل السطح. ما منسعّر قبل الكشف، والكشف مجاني.</p>
 <a class="btn alt" id="wa" target="_blank" rel="noopener">احجز كشف مجاني عبر واتساب</a>
+<p class="mut" style="text-align:center">أو اتصل: <a href="tel:+96178920901" dir="ltr">+961 78 920 901</a></p>
 </div>
 </section>
 
+<section id="plan" hidden>
+<h1 id="pg" hidden style="margin-top:4px"></h1>
+<h2>نظامي: خطة السحب اليومية</h2>
+<p class="mut">دخّل نظامك مرة وحدة، وبعدها افتح الصفحة كل صبح وشوف شو بتقدر تسحب اليوم حسب الطقس.</p>
+<p id="mysys" style="font-weight:800;margin:6px 0"></p>
+<div class="card"><details id="sy" open><summary>نظامي</summary>
+<div class="g" style="margin-top:10px">
+<div><label for="inv">الإنفرتر (kW)</label><input id="inv" type="number" step="0.5" min="1" value="6"></div>
+<div><label for="bt">نوع البطارية</label><select id="bt"><option value="l">ليثيوم</option><option value="g">جل</option><option value="a">أسيد</option></select></div>
+<div><label for="bn">عدد البطاريات</label><input id="bn" type="number" min="1" value="2"></div>
+<div><label for="ba">أمبير ساعة (Ah) للواحدة</label><input id="ba" type="number" min="1" value="100"></div>
+<div><label for="bv">فولت البطارية</label><input id="bv" type="number" step="0.1" min="1" value="51.2"></div>
+<div><label for="bat">أو kWh مباشرة (اختياري)</label><input id="bat" type="number" step="0.5" min="0" placeholder="مثلاً 10"></div>
+<div><label for="n">عدد الألواح</label><input id="n" type="number" min="1" value="10"></div>
+<div><label for="w">واط اللوح الواحد</label><input id="w" type="number" step="5" min="100" value="600"></div>
+<div><label for="eff">كفاءة النظام (%)</label><input id="eff" type="number" min="50" max="95" value="75"></div>
+
+</div>
+<p class="mut" id="kw"></p></details></div>
+
+<div class="card">
+<div id="dd" style="font-weight:800;font-size:18px"></div>
+<label for="so" style="margin-top:8px">نسبة البطارية هلق (%)</label>
+<input id="so" type="number" min="0" max="100" value="30" inputmode="numeric" style="font-size:28px;font-weight:800;text-align:center">
+<input id="sr" type="range" min="0" max="100" value="30" aria-label="نسبة البطارية">
+<p class="mut" id="src" style="margin-bottom:6px"></p>
+<div class="days" id="days"></div>
+<label for="ov" style="margin-top:10px">طقس هالنهار</label>
+<select id="ov"><option value="0">حسب التوقعات (تلقائي)</option><option value="1">1: صافي</option><option value="2">2: غيم جزئي</option><option value="3">3: غايم</option></select>
+<p id="sd" style="font-weight:800;margin:10px 0 0"></p><div class="w" id="wins"></div>
+<h2 style="margin-top:14px">نسبة البطارية خلال اليوم</h2><div dir="ltr"><svg id="cv" viewBox="0 0 320 150" style="width:100%;height:auto" role="img" aria-label="منحنى نسبة البطارية"></svg></div><p class="mut" id="cvn"></p>
+<div class="ch" id="ch" aria-hidden="true"></div>
+<div class="ax"><span>0</span><span>6</span><span>12</span><span>18</span><span>23</span></div>
+<p class="mut">الأعمدة: أقصى سحب مسموح (kW) لكل ساعة. أصفر نهاراً، أزرق ليلاً.</p>
+<ul id="nt"></ul>
+<p class="mut">تقدير مبني على الطقس ومواصفاتك. التشغيل الفعلي ممكن يختلف شوي.</p>
+</div>
+
+<div class="card" id="pnote"><h2>بدك رابط خاص فيك؟</h2><p>منجهّز لك رابط باسمك ومعبّأ بمواصفات نظامك، فما بتحتاج تفتح الموقع كل مرة. بتفتح رابطك وبتتابع نسبة البطارية والتحليل ليوم اليوم.</p><a class="btn alt" href="https://wa.me/96178920901?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A8%D8%AF%D9%8A%20%D8%B1%D8%A7%D8%A8%D8%B7%20%D8%AE%D8%A7%D8%B5%20%D9%84%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9%20%D9%86%D8%B8%D8%A7%D9%85%D9%8A%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%D9%8A." target="_blank" rel="noopener">اطلب رابطك الخاص</a><p class="mut" style="text-align:center">أو اتصل: <a href="tel:+96178920901" dir="ltr">+961 78 920 901</a></p></div>
+<p class="mut" style="text-align:center">كشف مجاني أو عطل؟ <a href="tel:+96178920901" dir="ltr">+961 78 920 901</a></p>
+</section>
 <section id="fix" hidden>
 <div class="card">
 <h2>عندك إنفرتر أو بطارية ليثيوم بعطل؟</h2>
@@ -118,6 +167,7 @@ details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;fo
 <label>الماركة والموديل</label><input id="fm">
 <label>رمز العطل أو شو عم يصير؟</label><textarea id="fd" rows="3"></textarea>
 <a class="btn alt" id="fw" target="_blank" rel="noopener">ابعت العطل عبر واتساب</a>
+<p class="mut" style="text-align:center">أو اتصل: <a href="tel:+96178920901" dir="ltr">+961 78 920 901</a></p>
 <p class="mut">بعد ما تبعت، ابعت صورة أو فيديو للجهاز ولشاشته على الواتساب.</p>
 </div>
 <div class="card">
@@ -148,7 +198,19 @@ details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;fo
 <details><summary>وين الأسعار؟</summary><p>ما منسعّر قبل الكشف لأنه كل موقع مختلف. الكشف مجاني، وبعدو منعطيك الكلفة.</p></details>
 </div>
 </section>
-<p class="mut" style="text-align:center;margin-top:20px">© Run to Sun. جميع الحقوق محفوظة.</p>
+<section id="adm" hidden><div class="card"><h2>مولّد روابط الزبائن</h2>
+<div class="g"><div><label for="gt">اللقب</label><input id="gt" value="الأستاذ"></div><div><label for="gn">اسم الزبون</label><input id="gn"></div>
+<div><label for="gi">الإنفرتر (kW)</label><input id="gi" type="number" step="0.5" value="6"></div><div><label for="gbt">نوع البطارية</label><select id="gbt"><option value="l">ليثيوم</option><option value="g">جل</option><option value="a">أسيد</option></select></div>
+<div><label for="gbn">عدد البطاريات</label><input id="gbn" type="number" value="2"></div>
+<div><label for="gba">Ah للواحدة</label><input id="gba" type="number" value="100"></div>
+<div><label for="gbv">فولت البطارية</label><input id="gbv" type="number" step="0.1" value="51.2"></div>
+<div><label for="gb">أو kWh مباشرة</label><input id="gb" type="number" step="0.5"></div>
+<div><label for="gnn">عدد الألواح</label><input id="gnn" type="number" value="10"></div><div><label for="gw">واط اللوح</label><input id="gw" type="number" value="600"></div>
+<div><label for="ge">الكفاءة (%)</label><input id="ge" type="number" value="75"></div></div>
+<button class="btn" id="gg">جهّز الرابط</button><label for="gu">الرابط</label><input id="gu" readonly dir="ltr">
+<button class="btn" id="gc" style="background:var(--card);color:var(--ink);border:1px solid var(--line)">نسخ الرابط</button><a class="btn alt" id="gwa" target="_blank" rel="noopener" hidden>ابعته بواتساب</a>
+<p class="mut">هالصفحة بتظهر بس إذا فتحت الموقع وزدت ?admin بآخر الرابط. الاسم بالرابط بيخلي الزبون ما يشاركه، بس هو مش قفل أمني.</p></div></section>
+<p class="mut ft" style="text-align:center;margin-top:20px">📞 <a href="tel:+96178920901" dir="ltr">+961 78 920 901</a><br>© Run to Sun. جميع الحقوق محفوظة.</p>
 </main>
 <script>
 const WA="96178920901",$=id=>document.getElementById(id);
@@ -156,9 +218,13 @@ const WA="96178920901",$=id=>document.getElementById(id);
 const INV1=[2000,3000,3500,5500,6000,8000,10000,12000], INV3=[18000,50000];
 const MAXPV={2000:2000,3000:3000,3500:3500,5500:5500,6000:9000,8000:16000,10000:10000,12000:12000,18000:18000,50000:50000};
 const BAT=[5,10,12,15,16,17.5,20,25,32,35], SUN=3.5, NIGHT_H=15;
+const TYN={l:"ليثيوم",g:"جل",a:"أسيد"};
+function BS(nd,ty,vo){if(!(nd>0))return{t:"بدون",k:0};
+ if(ty=="l"){nd=nd/.9;const s=BAT.find(x=>x>=nd);return s?{t:s+" kWh",k:s}:{t:Math.ceil(nd/35)+" × 35 kWh",k:Math.ceil(nd/35)*35}}
+ nd=nd/.5;const m=vo/12,c=Math.ceil(nd/2.4/m)*m;return{t:c+" × بطارية 200Ah (12V) "+TYN[ty],k:c*2.4}}
 const APP=[["براد",150,3,12,12],["مجمّدة",200,3,12,12],["مكيف 1 طن",1100,3,6,4],["غسالة",500,2,1,0],["موتور مي 1 حصان",750,3,1,0],["إنارة وتلفزيون وراوتر",300,1,5,6],["جهاز آخر",1000,1,2,2]];
 $("rows").innerHTML=APP.map((a,i)=>`<div class="row"><span>${a[0]}</span><input type="number" min="0" id="w${i}" value="${a[1]}" aria-label="واط"><input type="number" min="0" id="q${i}" value="0" aria-label="عدد"><input type="number" min="0" max="9" id="d${i}" value="${a[3]}" aria-label="ساعات نهار"><input type="number" min="0" max="15" id="n${i}" value="${a[4]}" aria-label="ساعات ليل"></div>`).join("");
-document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button").forEach(x=>x.setAttribute("aria-selected",x===b));["home","calc","fix","why"].forEach(t=>$(t).hidden=t!==b.dataset.t)});
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button").forEach(x=>x.setAttribute("aria-selected",x===b));["home","calc","plan","fix","why","adm"].forEach(t=>$(t).hidden=t!==b.dataset.t)});
 const link=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
 $("go").onclick=()=>{
  let sum=0,ex=0,day=0,ngt=0,list=[];
@@ -169,49 +235,106 @@ $("go").onclick=()=>{
  if(ph=="3"){const a=Math.ceil(need/18000),b=Math.ceil(need/50000);if(a*18000<=b*50000&&a<=2||need<=18000){unit=18000;units=a}else{unit=50000;units=b}}
  else{unit=INV1.find(x=>x>=need);if(!unit){unit=12000;units=Math.ceil(need/12000)}}
  const volt=unit<5000?24:48,invKW=unit*units/1000;
- let bat=ngt/.9,bt="";if(bat>0){const s=BAT.find(x=>x>=bat);bt=s?s+" kWh":(Math.ceil(bat/35)+" × 35 kWh");bat=s||Math.ceil(bat/35)*35}
+ const bs=BS(ngt,$("cty").value,volt),bt=bs.t==="بدون"?"":bs.t,bat=bs.k;
  const pvNeed=(day+bat)/(SUN*.75),cap=MAXPV[unit]*units/1000,pv=Math.max(invKW,pvNeed);
  const f=x=>x.toFixed(1).replace(".0","");
- $("res").innerHTML=`<div><span>الإنفرتر</span><b>${units>1?units+" × ":""}${f(unit/1000)} kW</b><span>نظام ${volt} فولت${ph=="3"?"، 3 فاز":""}</span></div><div><span>الألواح</span><b>≈ ${f(Math.min(pv,cap))} kW</b><span>حتى ${f(cap)} kW بهالإنفرتر</span></div><div><span>البطارية (ليثيوم)</span><b>${bt||"بدون"}</b><span>لحمل الليل</span></div><div><span>استهلاك تقريبي</span><b>${f(day)} + ${f(ngt)} kWh</b><span>نهار + ليل</span></div>`;
+ $("res").innerHTML=`<div><span>الإنفرتر</span><b>${units>1?units+" × ":""}${f(unit/1000)} kW</b><span>نظام ${volt} فولت${ph=="3"?"، 3 فاز":""}</span></div><div><span>الألواح</span><b>≈ ${f(Math.min(pv,cap))} kW</b><span>حتى ${f(cap)} kW بهالإنفرتر</span></div><div><span>البطارية (${TYN[$("cty").value]})</span><b>${bt||"بدون"}</b><span>لحمل الليل</span></div><div><span>استهلاك تقريبي</span><b>${f(day)} + ${f(ngt)} kWh</b><span>نهار + ليل</span></div>`;
  const u=$("use").value;$("tip").textContent={e:"بما إنك بتشتغل من الصبح الباكر، منميّل الألواح شرق أكتر لنستفيد من أول النهار.",s:"استهلاكك موزّع على النهار، فالتوجه جنوب هو الأنسب غالباً.",w:"بما إنك بتستهلك أكتر بعد الظهر، منميّل الألواح غرب شوي لتغطي حمل المكيفات."}[u]+" منركّب الألواح بميلان ثابت 33 درجة، واتجاهها وتثبيتها بنحسبن بالكشف.";
  $("wn").textContent=pvNeed>cap?"الحمل كبير على هالنظام، فمنحتاج ندرس تقسيم الإنفرترات والألواح بالكشف.":"";
  $("out").hidden=false;$("out").scrollIntoView({behavior:"smooth"});
  $("wa").href=link("مرحبا، بدي كشف مجاني.\nنوع النظام: "+(ph=="3"?"3 فاز":"فاز واحد")+"\nالأجهزة: "+list.join("، ")+"\nالتصور الأولي: إنفرتر "+(units>1?units+"×":"")+f(unit/1000)+" kW، ألواح ≈ "+f(Math.min(pv,cap))+" kW، بطارية "+(bt||"بدون"))};
 // أجهزة البيت: [الاسم، النوع (a أساسي، l خفيف، h ثقيل)، ساعات الليل، [[الخيار، أمبير]]]
 const HQ=[["براد","a",15,[["إنفرتر",1],["عادي",2]]],["مجمّدة","a",15,[["إنفرتر",1],["عادية",2]]],["إنارة وراوتر","a",8,[["عادي",1]]],["تلفزيون","l",5,[["تلفزيون",.6]]],["مكيف","h",4,[["إنفرتر",4],["عادي",6]]],["غسالة","h",0,[["إنفرتر",3],["عادية",4]]],["مي سخنة","h",2,[["سخان شمسي على السطح",0],["قنينة كهرباء",9]]],["طرمبة مي","h",1,[["طرمبة",4]]],["خلاط","h",0,[["خلاط",3]]],["هوفر","h",0,[["هوفر",4.5]]],["جلاية","h",1,[["جلاية",9]]],["نشافة","h",0,[["نشافة",11]]],["فرن","h",.5,[["غاز",0],["كهرباء",11]]],["مايكرويف","h",0,[["مايكرويف",5.5]]],["مكوى","h",0,[["مكوى",4]]]];
-const getHomeInv=t=>{
- if(t<=5)return{unit:2000,units:1};
- if(t<=10)return{unit:3000,units:1};
- if(t<=15)return{unit:3500,units:1};
- if(t<=20)return{unit:5500,units:1};
- const w=t*220*1.05,u=INV1.find(x=>x>=w);
- if(u)return{unit:u,units:1};
- return{unit:12000,units:Math.ceil(w/12000)};
-};
+const INVH={5:2000,10:3000,15:3500,20:5500};
 $("hq").innerHTML=HQ.map((h,i)=>`<div class="r2"><span>${h[0]}</span><select id="hs${i}"><option value="-1">ما عندي</option>${h[3].map((o,j)=>`<option value="${j}">عندي ${o[0]}</option>`).join("")}</select><input type="number" min="1" max="9" value="1" id="hn${i}" aria-label="عدد"></div>`).join("");
 const PRE={s:[5,{0:0,2:0,3:0}],m:[10,{0:0,1:0,2:0,3:0,5:0,7:0}],l:[15,{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0}]};
 document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{const P=PRE[b.dataset.p];$("tier").value=P[0];HQ.forEach((h,i)=>{$("hs"+i).value=(i in P[1])?P[1][i]:-1;$("hn"+i).value=1})});
 document.querySelectorAll(".btn-tier").forEach(b=>b.onclick=()=>{ $("tier").value=b.dataset.v; });
 $("hgo").onclick=()=>{
  const T=+$("tier").value,f=x=>x.toFixed(1).replace(".0","");
- if(!T||T<=0){alert("اكتب حجم النظام بالأمبير أولاً");return}
+ if(!T||T<=0){alert("اكتب كم أمبير بدك أولاً");return}
  let base=0,hv=[],ngt=0,day=0,list=[];
  HQ.forEach((h,i)=>{const j=+$("hs"+i).value;if(j<0)return;const o=h[3][j],q=+$("hn"+i).value||1,a=o[1]*q;list.push(h[0]+": "+o[0]+(q>1?" ×"+q:""));ngt+=a*.22*h[2];
   if(h[1]=="h"){if(a>0)hv.push([h[0]+" ("+o[0]+")",a]);day+=a*.22*1.5}else{base+=a;day+=a*.22*9}});
  if(!list.length){alert("اختار الأجهزة اللي عندك أولاً");return}
  hv.sort((x,y)=>y[1]-x[1]);
- const {unit,units}=getHomeInv(T),volt=unit<5000?24:48;let bat=ngt/.9,bt="بدون";if(bat>0){const s=BAT.find(x=>x>=bat);bt=s?s+" kWh":Math.ceil(bat/35)+" × 35 kWh"}
- const need=Math.max((unit*units)/1000,(day+(parseFloat(bt)||0))/(SUN*.75)),cap=((MAXPV[unit]||unit)*units)/1000,pv=Math.min(need,cap);
- $("hres").innerHTML=`<div><span>النظام</span><b>${T} أمبير</b><span>إنفرتر ${units>1?units+" × ":"~"}${f(unit/1000)} kW، ${volt} فولت</span></div><div><span>الألواح</span><b>≈ ${f(pv)} kW</b><span>تقريباً</span></div><div><span>البطارية (ليثيوم)</span><b>${bt}</b><span>لحمل الليل</span></div><div><span>الأساسيات</span><b>${f(base)} أمبير</b><span>شغالة طول الوقت</span></div>`;
+ const nd=T*.22*1.3*1000,unit=INV1.find(x=>x>=nd)||12000,units=Math.ceil(nd/unit),volt=unit<5000?24:48;const bs=BS(ngt,$("hty").value,volt),bt=bs.t,bat=bs.k;
+ const need=Math.max(unit*units/1000,(day+bat)/(SUN*.75)),cap=MAXPV[unit]*units/1000,pv=Math.min(need,cap);
+ $("hres").innerHTML=`<div><span>النظام</span><b>${T} أمبير</b><span>إنفرتر ~${units>1?units+" × ":""}${f(unit/1000)} kW، ${volt} فولت</span></div><div><span>الألواح</span><b>≈ ${f(pv)} kW</b><span>تقريباً</span></div><div><span>البطارية (${TYN[$("hty").value]})</span><b>${bt}</b><span>لحمل الليل</span></div><div><span>الأساسيات</span><b>${f(base)} أمبير</b><span>شغالة طول الوقت</span></div>`;
  let p=[];if(need>cap+.05)p.push('<li class="warn">بأيام الشتا الغايمة ممكن البطارية ما تتعبّى كلياً بهالحجم. بالكشف منحدد إذا بتحتاج إنفرتر أو ألواح أكبر.</li>');
- if(T>60)p.push('<li class="warn">للأحمال الأكبر من 60 أمبير يُفضّل دراسة نظام 3 فاز (راجع قسم معمل / مؤسسة).</li>');
  p.push(base>T?`<li class="warn">الأساسيات (براد، إنارة، تلفزيون…) لحالها ${f(base)} أمبير، وهيدا أكبر من ${T}. اختار نظام أكبر.</li>`:`<li>الأساسيات (براد، إنارة، تلفزيون…) بتضل شغالة وبتسحب حوالي ${f(base)} أمبير.</li>`);
  hv.forEach(([n,a])=>p.push(a<=T-base?`<li>✓ ${n}: بيشتغل مع الأساسيات (${f(a)} أمبير).</li>`:a<=T?`<li>⚠ ${n} (${f(a)} أمبير): شغّله لحاله، وطفّي البراد والأجهزة التانية وقت تشغيله.</li>`:`<li class="warn">✗ ${n} (${f(a)} أمبير): أكبر من نظام ${T} أمبير. بيحتاج نظام أكبر.</li>`));
  if(hv.length){p.push(`<li>ما تشغّل جهازين تقيلين مع بعض.</li>`);const mt=Math.ceil(base+hv[0][1]);p.push(`<li>لتشغّل أي جهاز مع الأساسيات براحتك، بتحتاج حوالي ${mt} أمبير.</li>`)}
  $("hplan").innerHTML=p.join("");$("hout").hidden=false;$("hout").scrollIntoView({behavior:"smooth"});
- $("hwa").href=link("مرحبا، بدي كشف مجاني.\nبيت، نظام "+T+" أمبير\nالأجهزة: "+list.join("، ")+"\nالتصور الأولي: إنفرتر "+(units>1?units+"×":"~")+f(unit/1000)+" kW، ألواح ≈ "+f(pv)+" kW، بطارية "+bt)};
+ $("hwa").href=link("مرحبا، بدي كشف مجاني.\nبيت، نظام "+T+" أمبير\nالأجهزة: "+list.join("، ")+"\nالتصور الأولي: إنفرتر ~"+(units>1?units+"×":"")+f(unit/1000)+" kW، ألواح ≈ "+f(pv)+" kW، بطارية "+bt)};
 const fl=()=>$("fw").href=link("عندي عطل.\nالجهاز: "+$("ft").value+"\nالموديل: "+$("fm").value+"\nالعطل: "+$("fd").value);
 ["ft","fm","fd"].forEach(i=>$(i).oninput=fl);fl();
+(function(){
+
+const $=i=>document.getElementById(i),DN=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"],IC=["","☀️","⛅","☁️"];
+const TF=[1.4,1.3,1.15,1.05,.97,.95,.95,.97,1.05,1.15,1.3,1.4],K=["inv","bt","bn","ba","bv","bat","n","w","eff"],TY={l:{re:.2,ce:.95,v:51.2,ah:100,c:2},g:{re:.5,ce:.85,v:12,ah:200,c:4},a:{re:.5,ce:.85,v:12,ah:200,c:4}},kwh=()=>(+$("bat").value>0?+$("bat").value:(+$("bn").value||0)*(+$("ba").value||0)*(+$("bv").value||0)/1000)||1;
+const MN=["كانون الثاني","شباط","آذار","نيسان","أيار","حزيران","تموز","آب","أيلول","تشرين الأول","تشرين الثاني","كانون الأول"],DS=d=>DN[d.getDay()]+" "+d.getDate()+" "+MN[d.getMonth()];
+let fc=null,sel=0,ov=[0,0,0,0,0,0,0];
+const t=x=>Math.floor(x)+":"+(x%1?"30":"00"),f=x=>x.toFixed(1).replace(".0","");
+const Q=new URLSearchParams(location.search),CN=Q.get("c"),KEY="rts_sys2"+(CN?"_"+CN:""),PM={inv:"i",bat:"b",bt:"bt",bn:"bn",ba:"ba",bv:"bv",n:"n",w:"w",eff:"e"};
+K.forEach(k=>{const v=Q.get(PM[k]);if(v)$(k).value=v});
+try{const d=JSON.parse(localStorage.getItem(KEY)||"null");if(d){K.forEach(k=>{if(d[k]!=null)$(k).value=d[k]});$("sy").open=false}}catch(e){}
+if(CN){document.body.classList.add("pm");document.querySelectorAll("section").forEach(x=>x.hidden=x.id!="plan");$("pg").hidden=false;$("pg").textContent="من Run to Sun إلى "+(Q.get("t")||"الأستاذ")+" "+CN;$("pnote").hidden=true;$("sy").open=false;document.title="Run to Sun | "+CN}
+if(Q.has("admin"))$("admb").hidden=false;
+const dt=i=>{const d=new Date();d.setDate(d.getDate()+i);return d};
+function sun(d){const N=Math.floor((d-new Date(d.getFullYear(),0,0))/864e5),dec=23.44*Math.sin(2*Math.PI*(284+N)/365)*Math.PI/180,la=33.9*Math.PI/180,dl=24/Math.PI*Math.acos(-Math.tan(la)*Math.tan(dec)),nn=12+(-d.getTimezoneOffset()/60*15-35.5)/15;return{r:nn-dl/2,s:nn+dl/2}}
+function plan(i,V){
+ const d=dt(i),m=d.getMonth(),sn=sun(d),ref=[3.5,3.5,5,5,5,6.5,6.5,6.5,5,5,5,3.5][m];
+ let lv=+ov[i]||0,poa;
+ if(!lv&&fc)poa=fc[i]*TF[m];else{lv=lv||1;poa=ref*[1,.6,.3][lv-1]}
+ if(!+ov[i]&&fc){const r=poa/ref;lv=r>=.85?1:r>=.5?2:3}
+ const Ed=V.P*poa*V.E,hs=[];let W=0;
+ for(let h=0;h<24;h++){const x=h+.5,w=(x>sn.r&&x<sn.s)?Math.sin(Math.PI*(x-sn.r)/(sn.s-sn.r)):0;hs.push(w);W+=w}
+ const so=i?V.re:V.so,need=(1-so)*V.B/V.ce,fr=Ed>0?Math.min(1,need/Ed):1;
+ const al=hs.map(w=>Math.min(V.I,(W?Ed*w/W:0)*(1-fr)));
+ const ss=fr<1?1:Math.min(1,so+Ed*V.ce/V.B),Nh=24-(sn.s-sn.r);
+ const Pn=Math.min(V.I,Math.max(0,ss-V.re)*V.B*V.ce/Nh);
+ return{d,sn,hs,al,Pn,Ed,fr,ss,lv};
+}
+function draw(){
+ const V={I:+$("inv").value,B:kwh(),P:(+$("n").value||0)*(+$("w").value||0)/1000,E:(+$("eff").value||75)/100,re:TY[$("bt").value].re,ce:TY[$("bt").value].ce,so:Math.min(1,Math.max(0,$("so").value/100))};
+ try{localStorage.setItem(KEY,JSON.stringify(Object.fromEntries(K.map(k=>[k,$(k).value]))))}catch(e){}
+ $("dd").textContent="اليوم "+DS(new Date());$("kw").textContent="قدرة الألواح: "+f(V.P)+" kW — البطارية: "+f(V.B)+" kWh";$("mysys").textContent="نظامك: إنفرتر "+f(V.I)+" kW · ألواح "+$("n").value+" × "+$("w").value+"W = "+f(V.P)+" kW · بطارية "+TYN[$("bt").value]+" "+(+$("bat").value>0?f(+$("bat").value)+" kWh":$("bn").value+" × "+$("ba").value+"Ah "+$("bv").value+"V = "+f(V.B)+" kWh");
+ $("src").textContent=fc?"الطقس: توقعات حية لبيروت":"الطقس: تقدير. اختار 1 أو 2 أو 3 لكل نهار.";
+ const P=[0,1,2,3,4,5,6].map(i=>plan(i,V));
+ $("days").innerHTML=P.map((p,i)=>`<button data-i="${i}" aria-pressed="${i==sel}">${i?DN[p.d.getDay()]:"اليوم"}<b>${IC[p.lv]}</b>${p.d.getDate()}/${p.d.getMonth()+1}</button>`).join("");
+ document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{sel=+b.dataset.i;$("ov").value=ov[sel];draw()});
+ const p=P[sel],se=p.sn,al=p.al,av=(a,b)=>{const x=al.filter((_,h)=>h+.5>=a&&h+.5<b);return x.length?x.reduce((s,y)=>s+y,0)/x.length:0};
+ const ws=[["صباحاً",se.r,10],["ظهراً",10,15],["العصر",15,Math.max(15.5,se.s)]].map(([n,a,b])=>({n,a,b,v:av(a,b)}));
+ $("sd").textContent=DS(p.d)+" — إنتاج متوقع "+f(p.Ed)+" kWh";
+ $("wins").innerHTML=ws.map(x=>`<div><span>${x.n} (${t(x.a)}–${t(x.b)})</span><b>${f(x.v)} kW</b></div>`).join("")+`<div><span>بالليل (${t(se.s)}–${t(se.r)})</span><b>${f(p.Pn)} kW</b></div>`;
+ const mx=Math.max(.1,...al,p.Pn);
+ $("ch").innerHTML=al.map((a,h)=>{const d=p.hs[h]>0,x=d?a:p.Pn;return `<div class="${d?"s":"n"}" style="height:${x/mx*100}%" title="${h}:00 ← ${f(x)} kW"></div>`}).join("");
+ const n=[],bi=ws.reduce((a,b)=>b.v>a.v?b:a);
+ if(p.Ed<=0)n.push('<li class="warn">ما في إنتاج كافي اليوم.</li>');
+ else if(p.fr>=1)n.push(`<li class="warn">ألواحك ما بتكفي تعبّي البطارية كلياً${sel?"":" اليوم"}. بأقل سحب بتوصل لحوالي ${Math.round(p.ss*100)}% قبل الغروب.</li>`);
+ else n.push("<li>إذا التزمت بالجدول، البطارية بتوصل 100% قبل الغروب.</li>");
+ if(bi.v>.2)n.push(`<li>أنسب وقت للأجهزة التقيلة: ${t(bi.a)}–${t(bi.b)}.</li>`);
+ n.push(`<li>أقل نسبة بتوصلها البطارية الصبح: حوالي ${Math.round(Math.min(p.ss,V.re)*100)}%.</li>`);
+ if($("bt").value!="l")n.push("<li>بطاريات الأسيد والجل بنحسبها نصف السعة بس (لحد 50%) لحماية عمرها.</li>");
+ if(p.Pn<.4)n.push('<li class="warn">سحب الليل المتاح قليل، فما تشغّل أجهزة تقيلة بالليل.</li>');
+ if(sel)n.push("<li>الأيام الجاية محسوبة على إنه البطارية بتبدأ الصبح عند أقل نسبة.</li>");
+ {const r=se.r,s=se.s,dt=.5,B=V.B,x=k=>28+k/48*284,y=v=>120-v*110;let Wn=0;for(let q=r;q<s;q+=dt)Wn+=Math.sin(Math.PI*(q-r+dt/2)/(s-r))*dt;
+ let c=sel?V.re:V.so;const pts=[c];
+ for(let k=0;k<48;k++){const q=r+k*dt;if(q<s){const w=Math.sin(Math.PI*(q+dt/2-r)/(s-r));c=Math.min(1,c+p.Ed*w/Wn*p.fr*V.ce*dt/B)}else c=Math.max(0,c-p.Pn/V.ce*dt/B);pts.push(c)}
+ const ks=Math.min(48,Math.round((s-r)/dt)),dd=pts.map((v,k)=>(k?"L":"M")+x(k).toFixed(1)+" "+y(v).toFixed(1)).join(""),pc=v=>Math.round(v*100);
+ $("cv").innerHTML=`<g style="stroke:var(--line);stroke-width:1">${[0,.5,1].map(v=>`<line x1="28" x2="312" y1="${y(v)}" y2="${y(v)}"/>`).join("")}</g><path d="${dd} L312 120 L28 120Z" style="fill:var(--sun);opacity:.25"/><path d="${dd}" style="fill:none;stroke:var(--ok);stroke-width:2.5"/>`+[[0,pts[0]],[ks,pts[ks]],[48,pts[48]]].map(([k,v])=>`<circle cx="${x(k)}" cy="${y(v)}" r="4" style="fill:var(--ok)"/><text x="${Math.min(298,Math.max(40,x(k)))}" y="${Math.max(12,y(v)-8)}" text-anchor="middle" style="fill:var(--ink);font:700 12px sans-serif">${pc(v)}%</text>`).join("")+[[0,t(r),"start"],[ks,t(s),"middle"],[48,t(r),"end"]].map(([k,l,a])=>`<text x="${x(k)}" y="140" text-anchor="${a}" style="fill:var(--mut);font:11px sans-serif">${l}</text>`).join("")+[0,50,100].map(v=>`<text x="2" y="${y(v/100)+4}" style="fill:var(--mut);font:11px sans-serif">${v}</text>`).join("");
+ $("cvn").textContent="المنحنى من الشروق لشروق بكرا إذا التزمت بالجدول: الشمس بتعبّي البطارية لحد "+pc(pts[ks])+"% قبل الغروب، وبالليل بتنزل لحوالي "+pc(pts[48])+"% الصبح."}
+ $("nt").innerHTML=n.join("");
+}
+$("ov").onchange=()=>{ov[sel]=$("ov").value;draw()};
+[...K,"so"].forEach(k=>$(k).addEventListener("input",()=>{$("sr").value=$("so").value;draw()}));$("sr").oninput=()=>{$("so").value=$("sr").value;draw()};draw();
+try{fetch("https://api.open-meteo.com/v1/forecast?latitude=33.89&longitude=35.50&daily=shortwave_radiation_sum&timezone=auto&forecast_days=7").then(r=>r.json()).then(d=>{fc=d.daily.shortwave_radiation_sum.map(x=>x/3.6);draw()}).catch(()=>{})}catch(e){}
+
+$("gg").onclick=()=>{const nm=$("gn").value.trim(),tt=$("gt").value.trim()||"الأستاذ";if(!nm){alert("اكتب اسم الزبون");return}const q=new URLSearchParams({c:nm,t:tt,i:$("gi").value,bt:$("gbt").value,bn:$("gbn").value,ba:$("gba").value,bv:$("gbv").value,b:$("gb").value,n:$("gnn").value,w:$("gw").value,e:$("ge").value}),u=location.origin+location.pathname+"?"+q;$("gu").value=u;$("gwa").href="https://wa.me/?text="+encodeURIComponent("أهلاً "+tt+" "+nm+"، هيدا رابطك الخاص من Run to Sun لمتابعة نظامك الشمسي كل يوم:\n"+u);$("gwa").hidden=false};
+$("bt").onchange=()=>{const y=TY[$("bt").value];$("bn").value=y.c;$("ba").value=y.ah;$("bv").value=y.v;draw()};
+$("gc").onclick=()=>{const e=$("gu");e.select();try{navigator.clipboard.writeText(e.value)}catch(x){document.execCommand("copy")}};
+})();
 </script>
 </body>
 </html>
