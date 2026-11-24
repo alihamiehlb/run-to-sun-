@@ -55,9 +55,22 @@ details{border-top:1px solid var(--line);padding:8px 0}summary{cursor:pointer;fo
 <section id="home">
 <div class="card">
 <h2>بيتك: شو عندك؟</h2>
-<label>أي حجم نظام بدك؟</label>
-<select id="tier"><option value="5">5 أمبير</option><option value="10" selected>10 أمبير</option><option value="15">15 أمبير</option><option value="20">20 أمبير</option></select>
-<p class="mut">الأمبير هو أقصى ما بتشغّله مع بعض بنفس اللحظة. منقلك كيف تدير أجهزتك ضمنه.</p>
+<label for="tier">حجم النظام (بالأمبير):</label>
+<div style="display:flex;align-items:center;gap:8px">
+<input type="number" id="tier" min="2" max="60" value="10" step="1" style="font-size:16px;font-weight:700">
+<span style="font-weight:700;white-space:nowrap">أمبير (A)</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:5px;margin:8px 0">
+<button type="button" class="btn-tier" data-v="5" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">5A</button>
+<button type="button" class="btn-tier" data-v="10" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">10A</button>
+<button type="button" class="btn-tier" data-v="15" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">15A</button>
+<button type="button" class="btn-tier" data-v="20" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">20A</button>
+<button type="button" class="btn-tier" data-v="25" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">25A</button>
+<button type="button" class="btn-tier" data-v="30" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">30A</button>
+<button type="button" class="btn-tier" data-v="40" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">40A</button>
+<button type="button" class="btn-tier" data-v="50" style="padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;font:500 13px Tajawal,sans-serif">50A</button>
+</div>
+<p class="mut">فيك تكتب أي أمبير بدك ياه (من 2 لـ 60 أمبير) أو تختار كبسة سريعة. الأمبير هو أقصى ما بتشغّله مع بعض بنفس اللحظة.</p>
 <p class="mut">ابدأ من نموذج جاهز وعدّل عليه:</p>
 <div style="display:flex;gap:6px;margin:6px 0"><button class="btn" data-p="s" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت صغير</button><button class="btn" data-p="m" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت متوسط</button><button class="btn" data-p="l" style="margin:0;padding:8px;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line)">بيت كبير</button></div>
 <div id="hq"></div>
@@ -166,25 +179,37 @@ $("go").onclick=()=>{
  $("wa").href=link("مرحبا، بدي كشف مجاني.\nنوع النظام: "+(ph=="3"?"3 فاز":"فاز واحد")+"\nالأجهزة: "+list.join("، ")+"\nالتصور الأولي: إنفرتر "+(units>1?units+"×":"")+f(unit/1000)+" kW، ألواح ≈ "+f(Math.min(pv,cap))+" kW، بطارية "+(bt||"بدون"))};
 // أجهزة البيت: [الاسم، النوع (a أساسي، l خفيف، h ثقيل)، ساعات الليل، [[الخيار، أمبير]]]
 const HQ=[["براد","a",15,[["إنفرتر",1],["عادي",2]]],["مجمّدة","a",15,[["إنفرتر",1],["عادية",2]]],["إنارة وراوتر","a",8,[["عادي",1]]],["تلفزيون","l",5,[["تلفزيون",.6]]],["مكيف","h",4,[["إنفرتر",4],["عادي",6]]],["غسالة","h",0,[["إنفرتر",3],["عادية",4]]],["مي سخنة","h",2,[["سخان شمسي على السطح",0],["قنينة كهرباء",9]]],["طرمبة مي","h",1,[["طرمبة",4]]],["خلاط","h",0,[["خلاط",3]]],["هوفر","h",0,[["هوفر",4.5]]],["جلاية","h",1,[["جلاية",9]]],["نشافة","h",0,[["نشافة",11]]],["فرن","h",.5,[["غاز",0],["كهرباء",11]]],["مايكرويف","h",0,[["مايكرويف",5.5]]],["مكوى","h",0,[["مكوى",4]]]];
-const INVH={5:2000,10:3000,15:3500,20:5500};
+const getHomeInv=t=>{
+ if(t<=5)return{unit:2000,units:1};
+ if(t<=10)return{unit:3000,units:1};
+ if(t<=15)return{unit:3500,units:1};
+ if(t<=20)return{unit:5500,units:1};
+ const w=t*220*1.05,u=INV1.find(x=>x>=w);
+ if(u)return{unit:u,units:1};
+ return{unit:12000,units:Math.ceil(w/12000)};
+};
 $("hq").innerHTML=HQ.map((h,i)=>`<div class="r2"><span>${h[0]}</span><select id="hs${i}"><option value="-1">ما عندي</option>${h[3].map((o,j)=>`<option value="${j}">عندي ${o[0]}</option>`).join("")}</select><input type="number" min="1" max="9" value="1" id="hn${i}" aria-label="عدد"></div>`).join("");
 const PRE={s:[5,{0:0,2:0,3:0}],m:[10,{0:0,1:0,2:0,3:0,5:0,7:0}],l:[15,{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0}]};
 document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{const P=PRE[b.dataset.p];$("tier").value=P[0];HQ.forEach((h,i)=>{$("hs"+i).value=(i in P[1])?P[1][i]:-1;$("hn"+i).value=1})});
+document.querySelectorAll(".btn-tier").forEach(b=>b.onclick=()=>{ $("tier").value=b.dataset.v; });
 $("hgo").onclick=()=>{
- const T=+$("tier").value,f=x=>x.toFixed(1).replace(".0","");let base=0,hv=[],ngt=0,day=0,list=[];
+ const T=+$("tier").value,f=x=>x.toFixed(1).replace(".0","");
+ if(!T||T<=0){alert("اكتب حجم النظام بالأمبير أولاً");return}
+ let base=0,hv=[],ngt=0,day=0,list=[];
  HQ.forEach((h,i)=>{const j=+$("hs"+i).value;if(j<0)return;const o=h[3][j],q=+$("hn"+i).value||1,a=o[1]*q;list.push(h[0]+": "+o[0]+(q>1?" ×"+q:""));ngt+=a*.22*h[2];
   if(h[1]=="h"){if(a>0)hv.push([h[0]+" ("+o[0]+")",a]);day+=a*.22*1.5}else{base+=a;day+=a*.22*9}});
  if(!list.length){alert("اختار الأجهزة اللي عندك أولاً");return}
  hv.sort((x,y)=>y[1]-x[1]);
- const unit=INVH[T],volt=unit<5000?24:48;let bat=ngt/.9,bt="بدون";if(bat>0){const s=BAT.find(x=>x>=bat);bt=s?s+" kWh":Math.ceil(bat/35)+" × 35 kWh"}
- const need=Math.max(unit/1000,(day+(parseFloat(bt)||0))/(SUN*.75)),cap=MAXPV[unit]/1000,pv=Math.min(need,cap);
- $("hres").innerHTML=`<div><span>النظام</span><b>${T} أمبير</b><span>إنفرتر ~${f(unit/1000)} kW، ${volt} فولت</span></div><div><span>الألواح</span><b>≈ ${f(pv)} kW</b><span>تقريباً</span></div><div><span>البطارية (ليثيوم)</span><b>${bt}</b><span>لحمل الليل</span></div><div><span>الأساسيات</span><b>${f(base)} أمبير</b><span>شغالة طول الوقت</span></div>`;
+ const {unit,units}=getHomeInv(T),volt=unit<5000?24:48;let bat=ngt/.9,bt="بدون";if(bat>0){const s=BAT.find(x=>x>=bat);bt=s?s+" kWh":Math.ceil(bat/35)+" × 35 kWh"}
+ const need=Math.max((unit*units)/1000,(day+(parseFloat(bt)||0))/(SUN*.75)),cap=((MAXPV[unit]||unit)*units)/1000,pv=Math.min(need,cap);
+ $("hres").innerHTML=`<div><span>النظام</span><b>${T} أمبير</b><span>إنفرتر ${units>1?units+" × ":"~"}${f(unit/1000)} kW، ${volt} فولت</span></div><div><span>الألواح</span><b>≈ ${f(pv)} kW</b><span>تقريباً</span></div><div><span>البطارية (ليثيوم)</span><b>${bt}</b><span>لحمل الليل</span></div><div><span>الأساسيات</span><b>${f(base)} أمبير</b><span>شغالة طول الوقت</span></div>`;
  let p=[];if(need>cap+.05)p.push('<li class="warn">بأيام الشتا الغايمة ممكن البطارية ما تتعبّى كلياً بهالحجم. بالكشف منحدد إذا بتحتاج إنفرتر أو ألواح أكبر.</li>');
+ if(T>60)p.push('<li class="warn">للأحمال الأكبر من 60 أمبير يُفضّل دراسة نظام 3 فاز (راجع قسم معمل / مؤسسة).</li>');
  p.push(base>T?`<li class="warn">الأساسيات (براد، إنارة، تلفزيون…) لحالها ${f(base)} أمبير، وهيدا أكبر من ${T}. اختار نظام أكبر.</li>`:`<li>الأساسيات (براد، إنارة، تلفزيون…) بتضل شغالة وبتسحب حوالي ${f(base)} أمبير.</li>`);
  hv.forEach(([n,a])=>p.push(a<=T-base?`<li>✓ ${n}: بيشتغل مع الأساسيات (${f(a)} أمبير).</li>`:a<=T?`<li>⚠ ${n} (${f(a)} أمبير): شغّله لحاله، وطفّي البراد والأجهزة التانية وقت تشغيله.</li>`:`<li class="warn">✗ ${n} (${f(a)} أمبير): أكبر من نظام ${T} أمبير. بيحتاج نظام أكبر.</li>`));
  if(hv.length){p.push(`<li>ما تشغّل جهازين تقيلين مع بعض.</li>`);const mt=Math.ceil(base+hv[0][1]);p.push(`<li>لتشغّل أي جهاز مع الأساسيات براحتك، بتحتاج حوالي ${mt} أمبير.</li>`)}
  $("hplan").innerHTML=p.join("");$("hout").hidden=false;$("hout").scrollIntoView({behavior:"smooth"});
- $("hwa").href=link("مرحبا، بدي كشف مجاني.\nبيت، نظام "+T+" أمبير\nالأجهزة: "+list.join("، ")+"\nالتصور الأولي: إنفرتر ~"+f(unit/1000)+" kW، ألواح ≈ "+f(pv)+" kW، بطارية "+bt)};
+ $("hwa").href=link("مرحبا، بدي كشف مجاني.\nبيت، نظام "+T+" أمبير\nالأجهزة: "+list.join("، ")+"\nالتصور الأولي: إنفرتر "+(units>1?units+"×":"~")+f(unit/1000)+" kW، ألواح ≈ "+f(pv)+" kW، بطارية "+bt)};
 const fl=()=>$("fw").href=link("عندي عطل.\nالجهاز: "+$("ft").value+"\nالموديل: "+$("fm").value+"\nالعطل: "+$("fd").value);
 ["ft","fm","fd"].forEach(i=>$(i).oninput=fl);fl();
 </script>
